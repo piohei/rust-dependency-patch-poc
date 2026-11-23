@@ -1,0 +1,11 @@
+[package]
+name = "rust-dependency-patch-poc"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+hex = "=0.4.3"
+
+[patch.crates-io]
+hex = { path = ".patched/hex-0.4.3" }

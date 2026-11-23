@@ -1,0 +1,20 @@
+--- a/src/error.rs
++++ b/src/error.rs
+@@ -26,7 +26,7 @@
+             FromHexError::InvalidHexCharacter { c, index } => {
+                 write!(f, "Invalid character {:?} at position {}", c, index)
+             }
+-            FromHexError::OddLength => write!(f, "Odd number of digits"),
++            FromHexError::OddLength => write!(f, "Odd number of hex digits"),
+             FromHexError::InvalidStringLength => write!(f, "Invalid string length"),
+         }
+     }
+@@ -53,7 +53,7 @@
+-        assert_eq!(FromHexError::OddLength.to_string(), "Odd number of digits");
++        assert_eq!(FromHexError::OddLength.to_string(), "Odd number of hex digits");
+         assert_eq!(
+             FromHexError::InvalidStringLength.to_string(),
+             "Invalid string length"
+         );
+     }
+ }
